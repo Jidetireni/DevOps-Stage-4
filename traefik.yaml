@@ -15,13 +15,18 @@ entryPoints:
   websecure:
     address: ":443"
 
-certificatesResolvers:
-  letsencrypt:
-    acme:
-      email: jtirenipraise@gmail.com
-      storage: /letsencrypt/acme.json
-      httpChallenge:
-        entryPoint: web
+# certificatesResolvers:
+#   letsencrypt:
+#     acme:
+#       email: jtirenipraise@gmail.com
+#       storage: /letsencrypt/acme.json
+#       httpChallenge:
+#         entryPoint: web
+
+tls:
+  certificates:
+    - certFile: "/letsencrypt/live/banmtodoapp.duckdns.org/fullchain.pem"
+      keyFile: "/letsencrypt/live/banmtodoapp.duckdns.org/privkey.pem"
 
 providers:
   docker:
