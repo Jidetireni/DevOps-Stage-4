@@ -9,8 +9,8 @@ services:
     volumes:
       - /run/docker.sock:/run/docker.sock:ro
       - ./traefik.yaml:/etc/traefik/traefik.yml
-      # - ./letsencrypt:/letsencrypt
-      - /etc/letsencrypt:/letsencrypt:ro
+      - ./letsencrypt:/letsencrypt
+      # - /etc/letsencrypt:/letsencrypt:ro
     networks:
       - app-network
     restart: unless-stopped
